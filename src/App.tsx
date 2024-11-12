@@ -19,8 +19,24 @@ function useMobileVConsole() {
   }, [isMobile]);
 }
 
+function useUmamiTracker() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.defer = true;
+    script.setAttribute('data-website-id', '82f5691a-c934-4507-85ec-8b2942a5de17');
+    script.src = 'https://umami-selfhost-dusky.vercel.app/script.js';
+
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+}
+
 export const App = observer(() => {
   useMobileVConsole();
+  useUmamiTracker();
 
   return (
     <ConfigProvider

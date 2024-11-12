@@ -2,7 +2,7 @@ import { Button, Divider, Dropdown, Flex, Space, Typography } from "antd";
 import style from "./index.module.scss";
 import { observer } from "mobx-react-lite";
 import { Logo } from "@/components/Logo";
-import { GithubOutlined, MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { gstate } from "@/global";
 import { changeLang, langList } from "@/locale";
 import { homeState } from "@/states/home";
@@ -48,7 +48,7 @@ const Header = observer(() => {
           target="_blank"
           href="https://github.com/joye61/pic-smaller"
         >
-          <GithubOutlined />
+          {/* <GithubOutlined /> */}
         </Typography.Link>
 
         {/* If non-PC is determined, the menu button will be displayed */}
